@@ -3,7 +3,6 @@ const axios = require('axios');
 const app = express();
 const path = require('path');
 const router = express.Router();
-const axios = require('axios');
 const URL = 'https://api.publicapis.org/entries';
 
 router.get('/',function(req,res){

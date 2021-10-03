@@ -14,7 +14,6 @@ router.get('/items', async function(req,res){
     .then((items) => {
       res.setHeader('content-type', 'application/json');
       res.send(JSON.stringify(items.data));
-      console.log(items.data);
     })
     .catch((error) => {
       console.log(error);

@@ -60,7 +60,7 @@
     let select = document.createElement('select');
     let select2 = document.createElement('select');
     let head = document.getElementById('head');
-    const unique = [...new Set(data.map(item => item.Category))];
+    const uniqueItems = [...new Set(data.map(item => item.Category))];
     for (var i = 0; i < unique.length; i++) {
       let option = document.createElement('option');
       option.innerText = unique[i];

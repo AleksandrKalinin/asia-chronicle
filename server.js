@@ -5,11 +5,11 @@ const path = require('path');
 const router = express.Router();
 const URL = 'https://api.publicapis.org/entries';
 
-router.get('/',function(req,res){
+router.get('/',function(req,res) {
   res.sendFile(path.join(__dirname+'/index.html'));
 });
 
-router.get('/items', async function(req,res){
+router.get('/items', async function(req, res) {
   axios.get(URL)
     .then((items) => {
       res.setHeader('content-type', 'application/json');

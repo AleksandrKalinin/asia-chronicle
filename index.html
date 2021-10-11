@@ -23,7 +23,7 @@
     
     let data;
 
-    async function getItems(){
+    async function getItems() {
       try {
         let res = await fetch('http://localhost:3000/items');
         if (!res.ok) {
@@ -38,25 +38,25 @@
     }
 
   async function renderData(data) {
-      let root = document.getElementById('root');
-      root.innerHTML = '';
-      for (var i = 0; i < data.length; i++) {
-        let row = document.createElement('tr');
-        let id = document.createElement('td');
-        id.innerText = i;
-        let title = document.createElement('td');
-        title.innerText = data[i].API;
-        let category = document.createElement('td');
-        category.innerText = data[i].Category;
-        row.setAttribute('dataId', i);
-        row.appendChild(id);
+    let root = document.getElementById('root');
+    root.innerHTML = '';
+    for (var i = 0; i < data.length; i++) {
+      let row = document.createElement('tr');
+      let id = document.createElement('td');
+      id.innerText = i;
+      let title = document.createElement('td');
+      title.innerText = data[i].API;
+      let category = document.createElement('td');
+      category.innerText = data[i].Category;
+      row.setAttribute('dataId', i);
+      row.appendChild(id);
       row.appendChild(title);
       row.appendChild(category);
-        root.appendChild(row);
-      } 
+      root.appendChild(row);
+    } 
   }
 
-  async function getCategories(data){
+  async function getCategories(data) {
     let select = document.createElement('select');
     let select2 = document.createElement('select');
     let head = document.getElementById('head');
@@ -75,12 +75,12 @@
       select2.appendChild(option);
     }
 
-    select.addEventListener('change', function(e){
+    select.addEventListener('change', function(e) {
       let newData = data.filter(item => item.Category === e.target.value);
       renderData(newData);
     })
 
-    select2.addEventListener('change', function(e){
+    select2.addEventListener('change', function(e) {
       let newData = data.filter(item => item.API === e.target.value);
       renderData(newData);
     })    
